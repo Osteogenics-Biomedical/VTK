@@ -2378,6 +2378,7 @@ struct Triangulate
     {
       return 1;
     }
+    cout << "Tri failed\n";
 
     return 0;
   }
