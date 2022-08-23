@@ -1015,8 +1015,7 @@ struct vtkTargetPointClassifier
     this->CandidateCells = target->GetPolys();
     vtkIdType numPts = target->GetNumberOfPoints();
     this->PtLocks.resize(numPts);
-    this->PtClassification.resize(numPts);
-    this->PtClassification.insert(this->PtClassification.begin(), numPts, PointClassification::Unknown);
+    this->PtClassification.resize(numPts,PointClassification::Unknown);
   }
 
   // Set the classification of a target point. It retains the most specialized
