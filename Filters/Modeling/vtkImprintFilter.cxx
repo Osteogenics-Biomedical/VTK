@@ -1658,8 +1658,8 @@ struct ProduceIntersectionPoints
     // the intersection point. This is because the imprint end point may
     // have already been added during point projection, and the intersection
     // point (within tolerance) is the same as the end point.
-    if (vtkMath::Distance2BetweenPoints(xInt, x0) <= this->ProjTol2 ||
-      vtkMath::Distance2BetweenPoints(xInt, x1) <= this->ProjTol2)
+    if (vtkMath::Distance2BetweenPoints(xInt, x0) <= this->MergeTol2 ||
+      vtkMath::Distance2BetweenPoints(xInt, x1) <= this->MergeTol2)
     {
       // Evaluate whether this intersection point should actually be
       // added.
@@ -2387,7 +2387,6 @@ struct Triangulate
     {
       return 1;
     }
-    cout << "Tri failed\n";
 
     return 0;
   }
